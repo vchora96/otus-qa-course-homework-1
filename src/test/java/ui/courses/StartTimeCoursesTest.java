@@ -21,7 +21,7 @@ public class StartTimeCoursesTest {
         new MainPage(driver).open();
         new CoursePage(driver)
                 .getCourseByStartTime(TimeStart.EARLIEST)
-                .highlightElement()
+                //   .highlightElement()
                 .moveAndClick();
     }
 
@@ -30,7 +30,7 @@ public class StartTimeCoursesTest {
         new MainPage(driver).open();
         new CoursePage(driver)
                 .getCourseByStartTime(TimeStart.LATEST)
-                .highlightElement()
+                //   .highlightElement()
                 .moveAndClick();
     }
 

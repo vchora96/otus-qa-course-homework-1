@@ -49,7 +49,8 @@ public class UIExtension implements BeforeEachCallback, AfterEachCallback, After
   @Override
   public void beforeEach(ExtensionContext extensionContext) {
     driver = new DriverFactory().getDriver();
-    driver.register(new MouseListener());
+    EventFiringWebDriver eventRecorder = new EventFiringWebDriver(driver);
+    eventRecorder.register(new MouseListener());
     Set<Field> fields = getAnnotatedFields(Driver.class, extensionContext);
 
     for (Field field : fields) {
@@ -58,7 +59,7 @@ public class UIExtension implements BeforeEachCallback, AfterEachCallback, After
            // () -> {
               try {
                 field.setAccessible(true);
-                field.set(extensionContext.getTestInstance().get(), driver);
+                field.set(extensionContext.getTestInstance().get(), eventRecorder);
               } catch (IllegalAccessException e) {
                 throw new Error(String.format("Could not access or set webdriver in field: %s - is this field public?", field), e);
               }
