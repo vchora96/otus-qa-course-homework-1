@@ -5,19 +5,19 @@ import org.openqa.selenium.WebElement;
 import java.time.LocalDate;
 
 public class CourseComponent {
-    private final WebElement webElement;
-    private final LocalDate startDate;
+        private final WebElement webElement;
+        private final LocalDate startDate;
 
-    public CourseComponent(WebElement webElement, LocalDate localDate) {
-        this.webElement = webElement;
-        this.startDate = localDate;
-    }
+        public CourseComponent(WebElement webElement, LocalDate localDate) {
+                this.webElement = webElement;
+                this.startDate = localDate;
+        }
 
-    public WebElement getWebElement() {
-        return webElement;
-    }
+        public WebElement getWebElement() {
+                return webElement;
+        }
 
-    public LocalDate getStartDate() {
-        return startDate;
-    }
+        public LocalDate getStartDate() {
+                return startDate;
+        }
 }

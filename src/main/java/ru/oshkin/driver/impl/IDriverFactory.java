@@ -5,5 +5,5 @@ import ru.oshkin.exceptions.DriverTypeNotSupported;
 
 
 public interface IDriverFactory {
-  WebDriver getDriver() throws DriverTypeNotSupported;
+        WebDriver getDriver() throws DriverTypeNotSupported;
 }

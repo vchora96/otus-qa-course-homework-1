@@ -13,22 +13,22 @@ import java.util.stream.Collectors;
 
 public abstract class CommonActions<T> {
 
-  protected WebDriver driver;
-  protected StandartWaiter standartWaiter;
+        protected WebDriver driver;
+        protected StandartWaiter standartWaiter;
 
-  public CommonActions(WebDriver driver) {
-    this.driver = driver;
-    PageFactory.initElements(driver, this);
+        public CommonActions(WebDriver driver) {
+                this.driver = driver;
+                PageFactory.initElements(driver, this);
 
-    standartWaiter = new StandartWaiter(driver);
-  }
+                standartWaiter = new StandartWaiter(driver);
+        }
 
-  protected BiConsumer<By, Predicate<? super WebElement>> clickElementByPredicate = (By locator, Predicate<? super WebElement> predicate) -> {
-    List<WebElement> elements = driver.findElements(locator).stream().filter(predicate).collect(Collectors.toList());
+        protected BiConsumer<By, Predicate<? super WebElement>> clickElementByPredicate = (By locator, Predicate<? super WebElement> predicate) -> {
+                List<WebElement> elements = driver.findElements(locator).stream().filter(predicate).collect(Collectors.toList());
 
-    if(!elements.isEmpty()) {
-      elements.get(0).click();
-    }
-  };
+                if (!elements.isEmpty()) {
+                        elements.get(0).click();
+                }
+        };
 
 }
