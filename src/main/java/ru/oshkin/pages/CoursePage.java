@@ -72,14 +72,26 @@ public class CoursePage {
                         courses.add(new CourseComponent(specialization, localDate));
                 }
 
-                LocalDate startDate = courses.get(0).getStartDate();
-                for (CourseComponent course : courses) {
-                        if (((time == TimeStart.LATEST) && course.getStartDate().isAfter(startDate))
-                                || (((time == TimeStart.EARLIEST) && course.getStartDate().isBefore(startDate)))) {
-                                startDate = course.getStartDate();
-                                element = course.getWebElement();
+
+                //
+                element = courses.stream().reduce((x, y) -> {
+                        switch (time) {
+                                case LATEST:
+                                        if (x.getStartDate().isAfter(y.getStartDate())) {
+                                                return x;
+                                        } else {
+                                                return y;
+                                        }
+                                case EARLIEST:
+                                        if (x.getStartDate().isBefore(y.getStartDate())) {
+                                                return x;
+                                        } else {
+                                                return y;
+                                        }
+                                default:
+                                        throw new UnsupportedOperationException("Ошибка при определении типа поиска");
                         }
-                }
+                }).orElseThrow(UnsupportedOperationException::new).getWebElement();
 
                 return this;
         }
