@@ -8,7 +8,7 @@ public enum Month {
         FEBRUARY("фев", 2),
         MARCH("мар", 3),
         APRIL("апр", 4),
-        MAY("май", 5),
+        MAY("мая", 5),
         JUNE("июн", 6),
         JULY("июл", 7),
         AUGUST("авг", 8),
@@ -17,8 +17,8 @@ public enum Month {
         NOVEMBER("ноя", 11),
         DECEMBER("дек", 12);
 
-        private String title;
-        private int number;
+        private final String title;
+        private final int number;
 
         private static final Map<String, Month> lookup = new HashMap<String, Month>();
 

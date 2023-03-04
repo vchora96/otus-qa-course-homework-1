@@ -1,7 +1,6 @@
 package ru.oshkin.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -31,7 +30,6 @@ public class CoursePage {
                 for (WebElement course : courses) {
                         String text = course.getAttribute("alt");
                         if (text.contains(name)) {
-                                System.out.println("Нашли:" + name);
                                 element = course;
                                 return this;
 
@@ -46,7 +44,6 @@ public class CoursePage {
                         cookies.get(0).click();
                 }
         }
-
 
         public CoursePage getCourseByStartTime(TimeStart time) {
                 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -72,8 +69,6 @@ public class CoursePage {
                         courses.add(new CourseComponent(specialization, localDate));
                 }
 
-
-                //
                 element = courses.stream().reduce((x, y) -> {
                         switch (time) {
                                 case LATEST:
@@ -92,13 +87,6 @@ public class CoursePage {
                                         throw new UnsupportedOperationException("Ошибка при определении типа поиска");
                         }
                 }).orElseThrow(UnsupportedOperationException::new).getWebElement();
-
-                return this;
-        }
-
-        public CoursePage highlightElement() {
-                JavascriptExecutor js = (JavascriptExecutor) driver;
-                js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
                 return this;
         }
 

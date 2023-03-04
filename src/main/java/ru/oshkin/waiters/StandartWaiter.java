@@ -15,7 +15,6 @@ public class
 
 StandartWaiter implements WaiterInt {
 
-
         private WebDriver driver = null;
 
         public StandartWaiter(WebDriver driver) {

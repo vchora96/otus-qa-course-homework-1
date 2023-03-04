@@ -1,6 +1,5 @@
 package ui.courses;
 
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +20,6 @@ public class StartTimeCoursesTest {
                 new MainPage(driver).open();
                 new CoursePage(driver)
                         .getCourseByStartTime(TimeStart.EARLIEST)
-                        //   .highlightElement()
                         .moveAndClick();
         }
 
@@ -30,8 +28,6 @@ public class StartTimeCoursesTest {
                 new MainPage(driver).open();
                 new CoursePage(driver)
                         .getCourseByStartTime(TimeStart.LATEST)
-                        //   .highlightElement()
                         .moveAndClick();
         }
-
 }

@@ -30,5 +30,4 @@ public abstract class CommonActions<T> {
                         elements.get(0).click();
                 }
         };
-
 }
