@@ -3,5 +3,4 @@ target
 allure-results
 .vscode
 .allure
-/pom.xml
 /otus-qa-course-homework-1.iml
