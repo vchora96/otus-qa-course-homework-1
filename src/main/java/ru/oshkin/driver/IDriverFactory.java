@@ -1,4 +1,4 @@
-package ru.oshkin.driver.impl;
+package ru.oshkin.driver;
 
 import org.openqa.selenium.WebDriver;
 import ru.oshkin.exceptions.DriverTypeNotSupported;

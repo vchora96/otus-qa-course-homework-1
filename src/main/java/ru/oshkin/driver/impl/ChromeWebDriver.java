@@ -8,6 +8,7 @@ import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import ru.oshkin.driver.IDriver;
 import ru.oshkin.exceptions.DriverTypeNotSupported;
 
 import java.util.logging.Level;

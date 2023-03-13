@@ -11,13 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  *
  * @author Pavel Balahonov <p.balahonov@corp.mail.ru>
  */
-public class
-
-StandartWaiter implements WaiterInt {
+public class StandardWaiter implements WaiterInt {
 
         private WebDriver driver = null;
 
-        public StandartWaiter(WebDriver driver) {
+        public StandardWaiter(WebDriver driver) {
                 this.driver = driver;
         }
 

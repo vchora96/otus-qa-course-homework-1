@@ -1,4 +1,4 @@
-package ru.oshkin.driver.impl;
+package ru.oshkin.driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.config.Config;

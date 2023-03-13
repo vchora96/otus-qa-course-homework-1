@@ -1,4 +1,4 @@
-package ui.courses;
+package ru.oshkin.courses;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

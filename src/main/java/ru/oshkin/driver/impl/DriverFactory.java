@@ -1,6 +1,7 @@
 package ru.oshkin.driver.impl;
 
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import ru.oshkin.driver.IDriverFactory;
 import ru.oshkin.exceptions.DriverTypeNotSupported;
 
 import java.util.Locale;
